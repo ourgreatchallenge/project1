@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using System.Diagnostics;
 using System.Web.UI.WebControls;
 using System.Windows;
 
@@ -80,6 +81,7 @@ namespace ExerciseApp.Views
             {
                 TbxMemo.Text += btn.Text.ToString();
             }
+            
         }
 
         private void Btn_dot_Click(object sender, RoutedEventArgs e)

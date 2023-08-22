@@ -106,7 +106,7 @@ namespace ExerciseApp.Views
 
         private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
-            var calc = new Calculator2();
+            var calc = new Calculator();
             //calc.Owner = this;
             calc.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             var result = calc.ShowDialog();
