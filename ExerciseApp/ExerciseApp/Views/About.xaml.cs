@@ -1,6 +1,6 @@
-﻿using MahApps.Metro.Controls;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows;
+using MahApps.Metro.Controls;
 
 namespace ExerciseApp.Views
 {

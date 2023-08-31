@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace ExerciseApp.Views
 {
@@ -12,5 +11,5 @@ namespace ExerciseApp.Views
         {
             InitializeComponent();
         }
-    }    
+    }
 }

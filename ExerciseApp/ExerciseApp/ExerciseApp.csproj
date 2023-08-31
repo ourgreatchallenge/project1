@@ -234,9 +234,6 @@
     <Compile Include="Views\weight\Calculator2.xaml.cs">
       <DependentUpon>Calculator2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\weight\Calculator.xaml.cs">
-      <DependentUpon>Calculator.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\weight\Weight.xaml.cs">
       <DependentUpon>Weight.xaml</DependentUpon>
     </Compile>
@@ -263,10 +260,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\weight\Calculator2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\weight\Calculator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

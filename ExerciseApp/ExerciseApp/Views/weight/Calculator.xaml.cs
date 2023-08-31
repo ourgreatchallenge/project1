@@ -8,12 +8,12 @@ namespace ExerciseApp.Views
     /// <summary>
     /// MqttPopupWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class Calculator2 : MetroWindow
+    public partial class Calculator : MetroWindow
     {
         double lastNumber; // 연산할 때 앞에 입력한 값을 저장하는 변수
         double result; // 연산한 결과 값을 저장하는 변수
         SelectedOperator selectedOperator;
-        public Calculator2()
+        public Calculator()
         {
             InitializeComponent();
         }

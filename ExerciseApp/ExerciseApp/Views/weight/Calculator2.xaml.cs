@@ -20,226 +20,96 @@ namespace ExerciseApp.Views
     /// <summary>
     /// MqttPopupWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class Calculator : MetroWindow
+    public partial class Calculator2 : MetroWindow
     {
-        double lastNumber; // 연산할 때 앞에 입력한 값을 저장하는 변수
-        double result; // 연산한 결과 값을 저장하는 변수
-        SelectedOperator selectedOperator;
-        public Calculator()
+        private string currentInput = "";
+        private double currentResult = 0.0;
+        private char currentOperator = ' ';
+        private bool newInput = true;
+
+        public Calculator2()
         {
             InitializeComponent();
         }
 
-        // enum을 이용하여 SelectedOperator.XXX를 사용하기 위한 선언
-        public enum SelectedOperator
+        private void numberButton_Click(object sender, RoutedEventArgs e)
         {
-            Addition,
-            Subtraction,
-            Multiplication,
-            Division
-        }
-
-        // 연산에 대한 클래스(SimpleMath)
-        public class SimpleMath
-        {
-            public static double Add(double n1, double n2)
+            if (newInput)
             {
-                return n1 + n2;
+                TbxMemo.Text = "";
+                newInput = false;
             }
 
-            public static double Subtract(double n1, double n2)
-            {
-                return n1 - n2;
-            }
-
-            public static double Multiple(double n1, double n2)
-            {
-                return n1 * n2;
-            }
-
-            public static double Divide(double n1, double n2)
-            {
-                return n1 / n2;
-            }
-        }
-        private void BtnPer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnReset_Click(object sender, RoutedEventArgs e)
-        {
-            TbxMemo.Text = string.Empty;
-            LblResult.Content = 0;
-        }
-
-        private void BtnClear_Click(object sender, RoutedEventArgs e)
-        {
-            double lastNumber;
-            if (double.TryParse(TbxMemo.Text.ToString(),out lastNumber))
-            {
-                lastNumber = lastNumber * 0.01;
-                TbxMemo.Text += lastNumber;
-            }
+            Button button = (Button)sender;
+            currentInput += button.Content.ToString();
+            TbxMemo.Text += button.Content.ToString();
         }
 
         private void operationButton_Click(object sender, RoutedEventArgs e)
         {
-            if (sender == Btn_Plus)
+            if (!newInput)
             {
-                TbxMemo.Text += Btn_Plus.Content.ToString();
-                selectedOperator = SelectedOperator.Addition;
+                Calculate();
+                newInput = true;
             }
-            if (sender == Btn_Minus)
-            {
-                TbxMemo.Text += Btn_Minus.Content.ToString();
-                selectedOperator = SelectedOperator.Subtraction;
-            }
-            if (sender == Btn_Multi)
-            {
-                TbxMemo.Text += Btn_Multi.Content.ToString();
-                selectedOperator = SelectedOperator.Multiplication;
-            }
-            if (sender == Btn_Div)
-            {
-                TbxMemo.Text += Btn_Multi.Content.ToString();
-                selectedOperator = SelectedOperator.Division;
-            }
-        }
 
-        private void numberButton_Click(object sender, RoutedEventArgs e)
-        {
-            int selectedValue = 0;
-            if(sender == Btn0)
-            {
-                selectedValue = 0;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn1)
-            {
-                selectedValue = 1;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn2)
-            {
-                selectedValue = 2;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn3)
-            {
-                selectedValue = 3;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn4)
-            {
-                selectedValue = 4;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn5)
-            {
-                selectedValue = 5;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn6)
-            {
-                selectedValue = 6;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn7)
-            {
-                selectedValue = 7;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn8)
-            {
-                selectedValue = 8;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-            if (sender == Btn9)
-            {
-                selectedValue = 9;
-                if (TbxMemo.Text.ToString() == "0")
-                {
-                    TbxMemo.Text = selectedValue.ToString();
-                }
-                else
-                {
-                    TbxMemo.Text += selectedValue.ToString();
-                }
-            }
-        }
-
-        private void Btn_dot_Click(object sender, RoutedEventArgs e)
-        {
-
+            Button button = (Button)sender;
+            currentOperator = button.Content.ToString()[0];
+            currentResult = double.Parse(currentInput);
+            TbxMemo.Text += " " + currentOperator + " ";
+            currentInput = "";
         }
 
         private void Btn_result_Click(object sender, RoutedEventArgs e)
         {
+            Calculate();
+            newInput = true;
+        }
 
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            currentInput = "";
+            currentResult = 0.0;
+            currentOperator = ' ';
+            newInput = true;
+            TbxMemo.Text = "";
+            LblResult.Content = string.Empty;
+        }
+
+        private void Calculate()
+        {
+            double input = double.Parse(currentInput);
+
+            switch (currentOperator)
+            {
+                case '+':
+                    currentResult += input;
+                    break;
+                case '-':
+                    currentResult -= input;
+                    break;
+                case '*':
+                    currentResult *= input;
+                    break;
+                case '/':
+                    if (input != 0)
+                    {
+                        currentResult /= input;
+                    }
+                    else
+                    {
+                        TbxMemo.Text = "Error";
+                        LblResult.Content = "Error";
+                        currentInput = "";
+                        newInput = true;
+                        return;
+                    }
+                    break;
+            }
+
+            TbxMemo.Text = currentResult.ToString();
+            LblResult.Content = currentResult.ToString();
+            currentInput = currentResult.ToString();
         }
 
         

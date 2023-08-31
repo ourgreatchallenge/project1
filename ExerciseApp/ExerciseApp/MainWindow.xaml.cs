@@ -1,11 +1,8 @@
-﻿using ControlzEx.Theming;
+﻿using System.Diagnostics;
+using System.Windows;
+using ControlzEx.Theming;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using ExerciseApp.Logics;
-using ExerciseApp.Views;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Controls;
 
 namespace ExerciseApp
 {
@@ -14,7 +11,7 @@ namespace ExerciseApp
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-      
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,23 +31,23 @@ namespace ExerciseApp
         }
         #endregion
 
-       
+
         #region < 종료 버튼 클릭 시 메시지창 + 완전 종료 >
         private async void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            
+
             // e.Cancel을 true 하고 시작
             e.Cancel = true;
 
             var mySettings = new MetroDialogSettings
-                                 {
-                                     AffirmativeButtonText = "종료",
-                                     NegativeButtonText = "취소",
-                                     AnimateShow = true,
-                                     AnimateHide = true
-                                 };
+            {
+                AffirmativeButtonText = "종료",
+                NegativeButtonText = "취소",
+                AnimateShow = true,
+                AnimateHide = true
+            };
 
-            var result = await this.ShowMessageAsync("프로그램을 종료","프로그램을 종료하시겠습니까?",
+            var result = await this.ShowMessageAsync("프로그램을 종료", "프로그램을 종료하시겠습니까?",
                                                      MessageDialogStyle.AffirmativeAndNegative, mySettings);
             Process.GetCurrentProcess().Kill();
 

@@ -1,17 +1,13 @@
-﻿using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ExerciseApp.Logics
 {
     public class Commons
     {
-        
+
 
         // UserControl 같이 자식 클래스면서 MetroWindow를 직접 사용하지 않아 MahApps.Metro에 있는 MetroMessage창 사용 불가능할때
         // 아래 방법 사용

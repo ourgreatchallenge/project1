@@ -1,7 +1,7 @@
-﻿using ExerciseApp.Logics;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using ExerciseApp.Logics;
 using static System.Math;
 
 namespace ExerciseApp.Views
@@ -31,8 +31,8 @@ namespace ExerciseApp.Views
                 return;
             }
             // 무게값 입력, 무게기준 혹은 성별 선택안했을 경우
-            else if(((lbs == false) && (kg == false)) || ((male == false) && (female == false)))
-                
+            else if (((lbs == false) && (kg == false)) || ((male == false) && (female == false)))
+
             {
                 await Commons.ShowCustomMessageAsync("주의", "무게기준 혹은 성별을 입력하세요");
                 return;
@@ -62,10 +62,10 @@ namespace ExerciseApp.Views
                 // Debug.WriteLine(female.ToString()); // 성별 여자 기준
                 if (male == true)
                 {
-                    var realPr = (pr - 20)/2;
+                    var realPr = (pr - 20) / 2;
                     Debug.WriteLine(realPr.ToString());
-                    Debug.WriteLine((realPr/45).ToString());
-                    Debug.WriteLine((realPr%45).ToString());
+                    Debug.WriteLine((realPr / 45).ToString());
+                    Debug.WriteLine((realPr % 45).ToString());
                     Lbl45.Content = (realPr / 45).ToString();
                     realPr = realPr % 45;
                     Lbl35.Content = (realPr / 35).ToString();
@@ -106,12 +106,12 @@ namespace ExerciseApp.Views
 
         private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
-            var calc = new Calculator();
+            var calc = new Calculator2();
             //calc.Owner = this;
             calc.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             var result = calc.ShowDialog();
 
-            
+
         }
     }
 }
