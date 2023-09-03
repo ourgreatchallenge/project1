@@ -231,6 +231,9 @@
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\exercise\Explain.xaml.cs">
+      <DependentUpon>Explain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\weight\Calculator2.xaml.cs">
       <DependentUpon>Calculator2.xaml</DependentUpon>
     </Compile>
@@ -256,6 +259,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\exercise\Explain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
