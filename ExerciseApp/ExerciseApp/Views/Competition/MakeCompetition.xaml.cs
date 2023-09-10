@@ -12,15 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
-namespace ExerciseApp.Views.exercise
+namespace ExerciseApp.Views.Competition
 {
     /// <summary>
-    /// Explain.xaml에 대한 상호 작용 논리
+    /// MakeCompetition.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class Explain : UserControl
+    public partial class MakeCompetition : Page
     {
-        public Explain()
+        public MakeCompetition()
         {
             InitializeComponent();
         }

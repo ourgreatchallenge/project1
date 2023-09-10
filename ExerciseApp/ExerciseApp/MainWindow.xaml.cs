@@ -88,5 +88,14 @@ namespace ExerciseApp
             StsSelScreen.Content = "TotalRecord";
         }
         #endregion
+
+        #region < 대회 만들기 버튼 클릭 이벤트 >
+        private void MnuCompetitionMake_Click(object sender, RoutedEventArgs e)
+        {
+            //var competitionMake = new Views.MakeCompetition();
+            //ActiveItem.Content = competitionMake;
+            //StsSelScreen.Content = "MakeCompetition";
+        }
+        #endregion
     }
 }
