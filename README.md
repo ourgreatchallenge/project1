@@ -36,3 +36,28 @@ WPF
 - 대회 만들기 화면 디자인 시작
   - 대회명, 참가자 이름, 참가자 생년월일, 참가자 휴대폰 번호 입력 칸 만들기
   - 확인 버튼 클릭 시 popup창 혹은 옆에 표하나 더 만들어서 확인 한 뒤 저장할 수 있게 만들기
+
+## 05
+- 대회 만들기 화면
+  - 처음에 mah 사용하기 위해 page를 이용하였으나 usercontrol이 아닌이유 때문인지 main화면에 나오지 않는 문제 발생
+  - 다시 usercontrol로 변경
+  - mah 사용하려 했던 이유
+    - watermark 사용하고 싶었기 때문
+  - mah 사용하지 않고 watermark 표시할 수 있는 방법을 찾아야 했음
+    - textblock과 textbox 2개를 동시에 한 그리드에 넣는 방법응 이용하여 구현
+      - 기본 설정
+        - textbox background={x:null}
+        - textblock Text="원하는 문구", Foreground = "Gray"(watermark 느낌 내기 위함)
+      - textbox
+        - TextChanged, LostFocus, GotFocus 이벤트 넣기 
+      - TextChanged
+        - textbox의 텍스트가 빈값일 경우 TextBlock.visibility = Visibility.Visible 해주기
+        - 아닐경우 TextBlock.Visibility = Visibility.Hidden 해주기
+      - LostFocus
+        - TextBlock.Visibility = Visibility.Hidden 해주기
+      - GotFoucus
+        - textbox의 텍스트가 빈값일 경우 TextBlock.visibility = Visibility.Visible 해주기
+
+## 06
+
+
