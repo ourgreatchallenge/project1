@@ -237,6 +237,9 @@
     <Compile Include="Views\Competition\MakeCompetition.xaml.cs">
       <DependentUpon>MakeCompetition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Competition\MakeCompetition_.xaml.cs">
+      <DependentUpon>MakeCompetition_.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\exercise\Explain.xaml.cs">
       <DependentUpon>Explain.xaml</DependentUpon>
     </Compile>
@@ -269,6 +272,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Competition\MakeCompetition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Competition\MakeCompetition_.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

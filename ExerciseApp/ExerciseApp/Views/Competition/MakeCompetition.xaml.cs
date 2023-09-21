@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace ExerciseApp.Views.Competition
+namespace ExerciseApp.Views
 {
     /// <summary>
     /// MakeCompetition.xaml에 대한 상호 작용 논리
