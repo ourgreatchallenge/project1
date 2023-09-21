@@ -45,14 +45,12 @@
                 <Label Grid.Row="4" Grid.Column="0" Content="생년월일 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
                 <Label Grid.Row="5" Grid.Column="0" Content="전화번호 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
 
-                <StackPanel Grid.Row="1" Grid.Column="1">
-                    <Grid Margin="5">
-                        <TextBlock x:Name="tbk" Text="대회명을 입력하세요"  Margin="5,0"></TextBlock>
-                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxCompetitionName" Background="{x:Null}" 
-                             BorderThickness="0" Margin="5, 0"
-                             TextChanged="tbxCompetitionName_TextChanged" GotFocus="tbxCompetitionName_GotFocus" LostFocus="tbxCompetitionName_LostFocus"/>
-                    </Grid>
-                </StackPanel>
+                <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+                    <TextBlock x:Name="tbk" Text="대회명을 입력하세요"  Margin="5,0"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxCompetitionName" Background="{x:Null}" 
+                            BorderThickness="0" Margin="5, 0"
+                            TextChanged="tbxCompetitionName_TextChanged" GotFocus="tbxCompetitionName_GotFocus" LostFocus="tbxCompetitionName_LostFocus"/>
+                </Grid>
 
             </Grid>
 
