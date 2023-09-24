@@ -29,25 +29,87 @@ namespace ExerciseApp.Views
         {
             if (tbxCompetitionName.Text == "")
             {
-                tbk.Visibility = Visibility.Visible;
+                tbkCompetitionName.Visibility = Visibility.Visible;
             }
             else
             {
-                tbk.Visibility = Visibility.Hidden;
+                tbkCompetitionName.Visibility = Visibility.Hidden;
             }
         }
 
         private void tbxCompetitionName_GotFocus(object sender, RoutedEventArgs e)
         {
-            tbk.Visibility = Visibility.Hidden;
+            tbkCompetitionName.Visibility = Visibility.Hidden;
         }
 
         private void tbxCompetitionName_LostFocus(object sender, RoutedEventArgs e)
         {
             if (tbxCompetitionName.Text == "")
             {
-                tbk.Visibility = Visibility.Visible;
+                tbkCompetitionName.Visibility = Visibility.Visible;
             }
+        }
+
+        
+
+        private void tbxPhoneNum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbxPhoneNum.Text == "")
+            {
+                tbkPhoneNum.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbkPhoneNum.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbxPhoneNum_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbkPhoneNum.Visibility = Visibility.Hidden;
+        }
+
+        private void tbxPhoneNum_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbxCompetitionName.Text == "")
+            {
+                tbkPhoneNum.Visibility = Visibility.Visible;
+            }
+        }
+
+
+        private void tbxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbxName.Text == "")
+            {
+                tbkName.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbkName.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbxName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbkName.Visibility = Visibility.Hidden;
+        }
+
+        private void tbxName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbxCompetitionName.Text == "")
+            {
+                tbkPhoneNum.Visibility = Visibility.Visible;
+            }
+        }
+        private void btnCheck_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

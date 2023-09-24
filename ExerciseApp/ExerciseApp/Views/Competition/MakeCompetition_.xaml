@@ -45,12 +45,33 @@
                 <Label Grid.Row="4" Grid.Column="0" Content="생년월일 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
                 <Label Grid.Row="5" Grid.Column="0" Content="전화번호 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
 
-                <Grid Grid.Row="1" Grid.Column="1" Margin="5">
-                    <TextBlock x:Name="tbk" Text="대회명을 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
+                <Grid Grid.Row="1" Grid.Column="1" Margin="5" Height="40">
+                    <TextBlock x:Name="tbkCompetitionName" Text="대회명을 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxCompetitionName" Background="{x:Null}" 
                             BorderThickness="0" Margin="5, 0"
                             TextChanged="tbxCompetitionName_TextChanged" GotFocus="tbxCompetitionName_GotFocus" LostFocus="tbxCompetitionName_LostFocus"/>
                 </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="1" Margin="5" Height="50">
+                    <TextBlock x:Name="tbkName" Text="이름을 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxName" Background="{x:Null}" 
+                            BorderThickness="0" Margin="5, 0"
+                            TextChanged="tbxName_TextChanged" GotFocus="tbxName_GotFocus" LostFocus="tbxName_LostFocus"/>
+                </Grid>
+
+                <DatePicker Grid.Row="4" Grid.Column="1" Margin="5" x:Name="dtpBirthYear" />
+
+                <Grid Grid.Row="5" Grid.Column="1" Margin="5" Height="50">
+                    <TextBlock x:Name="tbkPhoneNum" Text="전화번호를 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxPhoneNum" Background="{x:Null}" 
+                            BorderThickness="0" Margin="5, 0"
+                            TextChanged="tbxPhoneNum_TextChanged" GotFocus="tbxPhoneNum_GotFocus" LostFocus="tbxPhoneNum_LostFocus"/>
+                </Grid>
+
+                <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnCheck" Content="확인" Click="btnCheck_Click" Width="50" Margin="0,0,20,0"/>
+                    <Button x:Name="btnCancel" Content="취소" Click="btnCancel_Click" Background="DarkSalmon" Width="50" />
+                </StackPanel>
 
             </Grid>
 
