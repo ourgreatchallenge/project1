@@ -99,17 +99,22 @@ namespace ExerciseApp.Views
         {
             if (tbxCompetitionName.Text == "")
             {
-                tbkPhoneNum.Visibility = Visibility.Visible;
+                tbkName.Visibility = Visibility.Visible;
             }
         }
         private void btnCheck_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoGrid.Visibility = Visibility.Visible;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            InfoGrid.Visibility = Visibility.Hidden;
+        }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            InfoGrid.Visibility = Visibility.Hidden;
         }
     }
 }

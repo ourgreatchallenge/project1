@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ExerciseApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -16,7 +16,8 @@
         <Label Grid.Row="0" Content="Make Competition" FontSize="20"/>
         <Label Grid.Row="1" Content="정보 입력하기" FontSize="15"/>
 
-        <Grid Grid.Row="2" Margin="10">
+        <Grid Grid.Row="2" Margin="10" >
+            <Border BorderBrush="Black" BorderThickness="0,0,1,0" />
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -38,12 +39,11 @@
                 </Grid.RowDefinitions>
 
                 <Label Grid.Row="0" Grid.ColumnSpan="2" Content="대회 정보" HorizontalContentAlignment="Center" FontSize="20" VerticalAlignment="Center" />
-                <Label Grid.Row="2" Grid.ColumnSpan="2" Content="참가자 정보" HorizontalContentAlignment="Center" FontSize="20" VerticalAlignment="Center" />
 
-                <Label Grid.Row="1" Grid.Column="0" Content="대 회 명 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
-                <Label Grid.Row="3" Grid.Column="0" Content="이      름 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
-                <Label Grid.Row="4" Grid.Column="0" Content="생년월일 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
-                <Label Grid.Row="5" Grid.Column="0" Content="전화번호 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="대 회 명 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,9,0,8"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="시작날짜 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,9,0,8" />
+                <Label Grid.Row="3" Grid.Column="0" Content="종료날짜 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,9,0,8" />
+
 
                 <Grid Grid.Row="1" Grid.Column="1" Margin="5" Height="40">
                     <TextBlock x:Name="tbkCompetitionName" Text="대회명을 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
@@ -52,31 +52,61 @@
                             TextChanged="tbxCompetitionName_TextChanged" GotFocus="tbxCompetitionName_GotFocus" LostFocus="tbxCompetitionName_LostFocus"/>
                 </Grid>
 
-                <Grid Grid.Row="3" Grid.Column="1" Margin="5" Height="50">
+                <DatePicker Grid.Row="2" Grid.Column="1" Margin="5" Height="40"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" Margin="5" Height="40"/>
+
+                <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnCheck" Content="확인" Click="btnCheck_Click" Width="50" Margin="0,0,20,0"/>
+                    <Button x:Name="btnCancel" Content="취소" Click="btnCancel_Click" Background="DarkSalmon" Width="50" Height="30" VerticalAlignment="Top" />
+                </StackPanel>
+
+            </Grid>
+
+            <Grid x:Name="InfoGrid" Grid.Column="1" Margin="10" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Label Grid.Row="0" Grid.ColumnSpan="2" Content="참가자 정보" HorizontalContentAlignment="Center" FontSize="20" VerticalAlignment="Center" Height="40" Margin="0,12,0,0" />
+
+                <Label Grid.Row="1" Grid.Column="0" Content="대  회  명 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,5" Height="30" Width="90" />
+                <Label Grid.Row="2" Grid.Column="0" Content="이      름 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,8,0,9" Height="30" Width="90"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="생년월일 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,12,1,10" Height="30" Width="90"/>
+                <Label Grid.Row="4" Grid.Column="0" Content="전화번호 :" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Margin="0,10" Height="30" Width="90"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="대회명" VerticalAlignment="Center" FontSize="15" Margin="5"/> <!--대회정보 대회명과 바인딩 시키기-->
+                <Grid Grid.Row="2" Grid.Column="1" Margin="5,10" Height="50">
                     <TextBlock x:Name="tbkName" Text="이름을 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxName" Background="{x:Null}" 
                             BorderThickness="0" Margin="5, 0"
                             TextChanged="tbxName_TextChanged" GotFocus="tbxName_GotFocus" LostFocus="tbxName_LostFocus"/>
                 </Grid>
 
-                <DatePicker Grid.Row="4" Grid.Column="1" Margin="5" x:Name="dtpBirthYear" />
+                <DatePicker Grid.Row="3" Grid.Column="1" Margin="5" x:Name="dtpBirthYear" Height="40" />
 
-                <Grid Grid.Row="5" Grid.Column="1" Margin="5" Height="50">
+                <Grid Grid.Row="4" Grid.Column="1" Margin="5,10" Height="50">
                     <TextBlock x:Name="tbkPhoneNum" Text="전화번호를 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxPhoneNum" Background="{x:Null}" 
                             BorderThickness="0" Margin="5, 0"
                             TextChanged="tbxPhoneNum_TextChanged" GotFocus="tbxPhoneNum_GotFocus" LostFocus="tbxPhoneNum_LostFocus"/>
                 </Grid>
 
+
                 <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="btnCheck" Content="확인" Click="btnCheck_Click" Width="50" Margin="0,0,20,0"/>
-                    <Button x:Name="btnCancel" Content="취소" Click="btnCancel_Click" Background="DarkSalmon" Width="50" />
+                    <Button x:Name="btnCheck2" Content="확인" Click="btnCheck_Click" Width="50" Margin="0,0,20,0"/>
+                    <Button x:Name="btnCancel2" Content="취소" Click="btnCancel_Click" Background="DarkSalmon" Width="50" Height="30" VerticalAlignment="Top" />
                 </StackPanel>
-
-            </Grid>
-
-            <Grid Grid.Column="1" Margin="10">
-
             </Grid>
 
         </Grid>
