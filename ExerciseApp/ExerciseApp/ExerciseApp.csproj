@@ -191,6 +191,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -212,6 +213,7 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -236,6 +238,9 @@
     </Compile>
     <Compile Include="Views\Competition\CompetitionInfo.xaml.cs">
       <DependentUpon>CompetitionInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Competition\CompetitionRank.xaml.cs">
+      <DependentUpon>CompetitionRank.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Competition\CompetitionRecord.xaml.cs">
       <DependentUpon>CompetitionRecord.xaml</DependentUpon>
@@ -278,6 +283,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Competition\CompetitionInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Competition\CompetitionRank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

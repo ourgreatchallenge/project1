@@ -91,7 +91,7 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem x:Name="MnuCompetitionInfo" Header="정보">
+                    <MenuItem x:Name="MnuCompetitionInfo" Header="정보" Click="MnuCompetitionInfo_Click">
                         <MenuItem.Icon>
                             <iconPacks:PackIconJamIcons Kind="Clipboard" />
                         </MenuItem.Icon>

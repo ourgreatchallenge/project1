@@ -24,5 +24,30 @@ namespace ExerciseApp.Views.Competition
         {
             InitializeComponent();
         }
+
+        private void tbxCompetitionName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbxCompetitionName.Text == "")
+            {
+                tbkCompetitionName.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbkCompetitionName.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbxCompetitionName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbkCompetitionName.Visibility = Visibility.Hidden;
+        }
+
+        private void tbxCompetitionName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbxCompetitionName.Text == "")
+            {
+                tbkCompetitionName.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ExerciseApp.Views.Competition
+namespace ExerciseApp.Views
 {
     /// <summary>
     /// CompetitionInfo.xaml에 대한 상호 작용 논리
@@ -23,6 +23,31 @@ namespace ExerciseApp.Views.Competition
         public CompetitionInfo()
         {
             InitializeComponent();
+        }
+
+        private void tbxCompetitionName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbxCompetitionName.Text == "")
+            {
+                tbkCompetitionName.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbkCompetitionName.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbxCompetitionName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbkCompetitionName.Visibility = Visibility.Hidden;
+        }
+
+        private void tbxCompetitionName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbxCompetitionName.Text == "")
+            {
+                tbkCompetitionName.Visibility = Visibility.Visible;
+            }
         }
     }
 }
