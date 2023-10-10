@@ -125,7 +125,12 @@
             </Grid>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="5,50">
-                <TextBox x:Name="TxtRecord" Text="기록" Width="180" VerticalAlignment="Center"/>
+                <Grid Height="30" Width="180">
+                    <TextBlock x:Name="tbkRecord" Text="기록을 입력하세요" Foreground="Gray" Margin="5,0"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxRecord" Background="{x:Null}" 
+                            BorderThickness="0" Margin="5, 0"
+                            TextChanged="tbxRecord_TextChanged" GotFocus="tbxRecord_GotFocus" LostFocus="tbxRecord_LostFocus"/>
+                </Grid>
                 <Button x:Name="BtnRecord" Content="입력하기" Margin="5,0,0,0"/>
             </StackPanel>
         </Grid>

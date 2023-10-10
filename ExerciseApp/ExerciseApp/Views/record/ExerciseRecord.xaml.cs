@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace ExerciseApp.Views
 {
@@ -10,6 +11,31 @@ namespace ExerciseApp.Views
         public ExerciseRecord()
         {
             InitializeComponent();
+        }
+
+        private void tbxRecord_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbxRecord.Text == "")
+            {
+                tbkRecord.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbkRecord.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbxRecord_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+            tbkRecord.Visibility = Visibility.Hidden;
+        }
+
+        private void tbxRecord_LostFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (tbxRecord.Text == "")
+            {
+                tbkRecord.Visibility = Visibility.Visible;
+            }
         }
     }
 }

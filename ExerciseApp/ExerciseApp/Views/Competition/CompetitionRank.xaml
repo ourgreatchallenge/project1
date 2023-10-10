@@ -39,7 +39,7 @@
 
                 </ComboBox>
 
-                <Button x:Name="BtnSelect"  Grid.Column="4" Content="조회하기" />
+                <Button x:Name="BtnSelect"  Grid.Column="4" Content="조회하기" Margin="0,0,10,0" />
 
             </Grid>
             
