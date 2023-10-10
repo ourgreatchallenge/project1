@@ -29,7 +29,6 @@
                              BorderThickness="0" Margin="5, 0"
                              TextChanged="tbxCompetitionName_TextChanged" GotFocus="tbxCompetitionName_GotFocus" LostFocus="tbxCompetitionName_LostFocus"/>
                 </Grid>
-                <Button x:Name="BtnSelectDate" Content="확인" Margin="3,0" />
                 <!--<Button x:Name="BtnSelectAll" Content="전체조회" Margin="3,0" Click="BtnSelectAll_Click"/>-->
             </StackPanel>
         </Grid>
